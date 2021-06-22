@@ -8,6 +8,7 @@
 • **Languages & Tools Used**: Matlab,Arduino IDE,Anroid Studio<br>
 ### OUTPUT
 ![image](https://user-images.githubusercontent.com/86291751/122912961-87a0dc00-d376-11eb-9aef-d82445d34066.png)
+![image](https://user-images.githubusercontent.com/86291751/122913481-1c0b3e80-d377-11eb-8477-414590e5a641.png)
 
 ![image](https://user-images.githubusercontent.com/86291751/122913252-d9496680-d376-11eb-9b1b-79879ab77e44.png)
 
