@@ -6,3 +6,6 @@
 • **Algorithm Used for Image Segmentaion**:Salt and Pepper Algorithm<br>
 • **Clustering method**:K-means Clustering<br>
 • **Languages & Tools Used**: Matlab,Arduino IDE,Anroid Studio<br>
+### OUTPUT
+![image](https://user-images.githubusercontent.com/86291751/122912961-87a0dc00-d376-11eb-9aef-d82445d34066.png)
+
