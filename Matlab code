@@ -1,0 +1,70 @@
+clc;
+clear all;
+close all;
+---------------IMAGE NORMALIZATION------------------
+[a b]=uigetfile('.jpg');
+I1=imread([b a]);
+figure,imshow(I1),title('original image'); 
+----------------IMAGE PREPROCESSING-----------------
+I2=imresize(I1,[256 256]); //normalising the image size to 256 x 256 pixels for image uniformity
+figure,imshow(I2),title('Resized Image');
+---------------ADDING NOISE USING SALT AND PEPPER ALGORITHM------- 
+In=imnoise(I2,'salt & pepper', 0.02); //Adding a noise density for about 2% to the resized image
+figure, imshow(In),title('noisy image'); 
+----------------NOISE REMOVAL--------------------------
+J=In;
+winsz=3;
+[s1, s2]=size(In);
+sz=min([s1 s2]);
+p=(winsz-1)/2;
+if size(J,3)>1
+for mnpk=1:3
+ipnoise=J(:,:,mnpk);
+medop=padarray(ipnoise,[p p]);
+for i=1+p:sz+p
+ for j=1+p:sz+p
+ submed=medop(i-p:i+p,j-p:j+p);
+ medop(i,j)=median(submed(1:9));
+end
+end
+medop=medop(1+p:sz+p,1+p:sz+p);
+op1(:,:,mnpk)=medop;
+end
+else
+ ipnoise=J;
+medop=padarray(ipnoise,[p p]);
+for i=1+p:sz+p
+for j=1+p:sz+p
+submed=medop(i-p:i+p,j-p:j+p);
+medop(i,j)=median(submed(1:9));
+end
+end
+medop=medop(1+p:sz+p,1+p:sz+p);
+op1=medop;
+end
+figure,imshow(op1),title('noise removal image') 
+----------IMAGE SEGMENTATION USING ADAPTIVE K- MEANS ALGORITHM--------
+im=I2;
+[lb,center] = adaptcluster_kmeans(im(:,:,2));
+figure,imshow(lb,[]);
+impixelinfo 
+[s1 s2]=size(lb);
+for i=1:s1
+for j=1:s2
+ if lb(i,j)==1||lb(i,j)==2
+ A(i,j)=1;
+else
+ A(i,j)=0;
+ end 
+end
+end
+figure,imshow(A,[]);
+[B1]=bwboundaries(A);
+figure,imshow(I2);title('leukocytes boundry');//Presence of leucocytic boundry detected and displays larvae detected
+hold on
+k=size(B1);
+for i=1:k
+ boundary=B1{i};
+ plot(boundary(:,2),boundary(:,1),'r','LineWidth',2,'color','red');
+end
+msgbox('LARVA DETECTED') //this message will be displayed via the connected LCD Display
