@@ -7,11 +7,18 @@
 • **Clustering method**:K-means Clustering<br>
 • **Languages & Tools Used**: Matlab,Arduino IDE,Anroid Studio<br>
 ### OUTPUT
+Original image<br>
 ![image](https://user-images.githubusercontent.com/86291751/122912961-87a0dc00-d376-11eb-9aef-d82445d34066.png)<br>
+Resized Image<br>
 ![image](https://user-images.githubusercontent.com/86291751/122915083-faab5200-d378-11eb-86ac-f342db6a0418.png)<br>
+Noisy Image<br>
 ![image](https://user-images.githubusercontent.com/86291751/122915243-2c241d80-d379-11eb-83fe-29062f74a07a.png)<br>
+Noise removal<br>
+![image](https://user-images.githubusercontent.com/86291751/122916176-3d215e80-d37a-11eb-8115-3cb60614e11e.png)
 ![image](https://user-images.githubusercontent.com/86291751/122915536-773e3080-d379-11eb-9678-8be0d4bb4d3b.png)<br>
-![image](https://user-images.githubusercontent.com/86291751/122915647-98068600-d379-11eb-990a-856b618ac71b.png)
+Leukocytic boundry Found<br>
+![image](https://user-images.githubusercontent.com/86291751/122915647-98068600-d379-11eb-990a-856b618ac71b.png)<br>
+Alert shown as Larvae Detected<br>
 ![image](https://user-images.githubusercontent.com/86291751/122914453-49a4b780-d378-11eb-9fbc-8d103b841266.png)<br>
 ![image](https://user-images.githubusercontent.com/86291751/122914652-7d7fdd00-d378-11eb-81d2-b46d0e50342f.png)
 
